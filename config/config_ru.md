@@ -57,6 +57,7 @@
 ### Aim (Прицеливание)
 
 - **body_y_offset** `float`: Смещение по оси Y, если голова не найдена или отключено наведение на голову. Например, `0.35` для смещения вверх.
+<br></br>
 ![Aim Diagram](https://github.com/SunOner/sunone_aimbot_docs/blob/main/config/media/body_y_offset.png)
 - **hideout_targets** `bool`: `true` - включить наведение на мишени, `false` - выключить.
 - **disable_headshot** `bool`: `true` - отключить наведение на голову, `false` - включить.
