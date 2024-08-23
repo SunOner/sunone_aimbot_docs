@@ -1,7 +1,8 @@
 1. All commands are executed from the command line when you are in the program's directory.
    - After launching the command line, execute the command `cd path_to_bot_unpacking`, for example, `cd C:\Users\amongus\downloads\sunone_aimbot-main`
-2. How to run the program?
+2. How to run the program from cmd?
    - `python run.py` or `py run.py`
+   - (This is useful if the window closes after startup)
 3. How to change settings?
    - Open the file config.ini using Notepad or another text editor, after changing options save the file.
 4. Model export interrupts at `ONNX: starting export with onnx 1.15.0 opset 17...`
@@ -11,16 +12,16 @@
 6. The model does not export, and the line appears TensorRT: export failure ❌ 0.5s: Could not find: cudnn64_8.dll. Is it on your PATH?
    - Download [cudnn64_8.zip](https://disk.yandex.ru/d/cm1Wi7OdkLtcLQ) and unpack it in C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/(your cuda version)/bin
 7. How to install a new model that I downloaded from boosty?
-   - Place it in the `models/` folder, go to config.ini and change ai_model_name = sunxds_0.4.1.pt or ai_model_name = sunxds_0.4.1.engine, if you exported the model to .engine. Also, don't forget to change the model size `ai_model_image_size`.
+   - Place it in the `models/` folder, go to config.ini and change ai_model_name = sunxds_0.5.6.pt or ai_model_name = sunxds_0.5.6.engine, if you exported the model to .engine. Also, don't forget to change the model size `ai_model_image_size`.
 8. How to export a model?
-   - Go to the [export](https://github.com/SunOner/sunone_aimbot?tab=readme-ov-file#export-pt-model-to-engine) section on the github page.
+   - Go to the [AI Models docs](https://github.com/SunOner/sunone_aimbot_docs/blob/main/ai_models/ai_models.md).
 9. The sight shoots above the head, how to adjust?
     - Change the `body_y_offset` parameter. The lower the value, the lower the aim.
 10. Autoshot does not work in some games.
     - Some games have protection against programmed mouse clicks. Use [Arduino](https://github.com/SunOner/HID_Arduino).
-11. Errors are reported and fixed [here](https://github.com/SunOner/sunone_aimbot/issues?q=is%3Aissue)
+11. Errors are reported and fixed in discord. Channel named `errors-and-tips`.
 12. I have a suggestion for improvement!
-    - [Create a topic here](https://github.com/SunOner/sunone_aimbot/discussions)
+    - [Create a topic here](https://github.com/SunOner/sunone_aimbot/discussions) or send me pm in Discord.
 13. The aimbot takes a long time to aim. It's kind of jerky. / WARNING NMS time limit exceeded
 	- Do not overload the graphics card!
 	- Do not set high game settings.
