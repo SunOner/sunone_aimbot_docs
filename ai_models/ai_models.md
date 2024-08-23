@@ -9,12 +9,12 @@
 
 - Models working directory is `./models` folder.
 
-- Export from Helper:
+## Export from Helper:
 	- Run helper and go to `EXPORT` tab.
 	- Select model.
 	- Select image size.
 	- Export.
-- Export from CMD:
+## Export from CMD:
 	- All commands are executed in the console window:
 	- First, go to the aimbot directory using the command:
 	```cmd
