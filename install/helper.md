@@ -9,5 +9,6 @@
 5. The script will first check the installed components necessary for the update.
 6. Next, you will see buttons in the menu. First, download and install CUDA, Torch then TensorRT.
 7. Without exiting the program, you can check functionality using the `Test detections` button.
-8. Everything should be ready.
-9. All issues and errors can be found on the official [Discord server](https://discord.gg/sunone).
+8. Export the AI model to the `engine` format to improve performance. [See AI MODELS Docs](https://github.com/SunOner/sunone_aimbot_docs/blob/main/ai_models/ai_models.md).
+9. Everything should be ready. Run run_ai.bat or type `py run.py` in cmd.
+10. All issues and errors can be found on the official [Discord server](https://discord.gg/sunone).
