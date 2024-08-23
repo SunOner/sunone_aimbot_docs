@@ -57,6 +57,7 @@ Capture using [OBS](https://github.com/obsproject/obs-studio).
 ### Aim
 
 - **body_y_offset** `float`: Y-axis offset if the head is not found or head targeting is disabled. For example, `0.35` for upward offset.
+<br></br>
 ![Aim Diagram](https://github.com/SunOner/sunone_aimbot_docs/blob/main/config/media/body_y_offset.png)
 - **hideout_targets** `bool`: `true` to enable targeting practice targets, `false` to disable.
 - **disable_headshot** `bool`: `true` to disable head targeting, `false` to enable.
