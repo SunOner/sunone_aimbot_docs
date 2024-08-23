@@ -24,10 +24,11 @@ cd C:\Users\your_username\downloads\sunone_aimbot-main
 ```cmd
 yolo export model="models/sunxds_0.5.6.pt" format=engine device=0 imgsz=640 half=True
 ```
-  - `model="model_path/model_name.pt"`: Path to model.
-  - `format=engine`: TensorRT model format.
-  - `half=true`: Use Half-precision floating-point format.
-  - `device=0`: GPU id.
-  - `workspace=8`: (optional) GPU max video memory.
-  - `verbose=False`: (optional) Debug stuff. Convenient function, can show errors when exporting.
-- After exporting, the new models will appear in the `./models` folder.
+- `model="model_path/model_name.pt"`: Path to model.
+- `format=engine`: TensorRT model format.
+- `half=true`: Use Half-precision floating-point format.
+- `device=0`: GPU id.
+- `workspace=8`: (optional) GPU max video memory.
+- `verbose=False`: (optional) Debug stuff. Convenient function, can show errors when exporting.
+
+## After exporting, the new models will appear in the `./models` folder.
