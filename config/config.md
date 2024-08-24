@@ -102,7 +102,10 @@ Capture method using the [OBS](https://github.com/obsproject/obs-studio) program
 - AI_mouse_net `bool`: Use neural networks for mouse movement. See [this repository](https://github.com/SunOner/mouse_net).
 
 ### Overlay:
-- show_overlay `bool`: Enable overlay. Not recommended for gaming as the interface is drawn over all applications and is clickable. Also, some games automatically take screenshots to check players for fair play.
+> [!NOTE]
+> Not recommended for gaming as the interface is drawn over all applications and is clickable. Also, some games automatically take screenshots to check players for fair play.
+
+- show_overlay `bool`: Enable overlay.
 - overlay_show_borders `bool`: Draw overlay borders.
 - overlay_show_boxes `bool`: Draw found targets.
 - overlay_show_target_line `bool`: Draw lines from the center of the screen to the target.
