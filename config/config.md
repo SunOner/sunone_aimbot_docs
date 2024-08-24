@@ -50,6 +50,9 @@ Capture method using the [OBS](https://github.com/obsproject/obs-studio) program
 ### Aim:
 - body_y_offset `float`: Offset the coordinates on the Y-axis (up from the target) by `0.35` if the head was not found or the head targeting function was disabled. `0.00` is the center of the target, you can also use `-0.10`, etc.
 <br></br>
+> [!NOTE]
+> Pay attention to the image. At the first, the player is detected by half and if the value is set to 0.50, the aimbot will be aimed at the head. In the second image, the player is completely detected, and if the value is set to the same 0.50, then the shots will no longer be fired into the head but into the chest.
+
 ![Aim Diagram](https://github.com/SunOner/sunone_aimbot_docs/blob/main/config/media/body_y_offset.png)
 - hideout_targets `bool`: The AI model distinguishes targets on the range. `true` enable targeting on targets, `false` disable.
 - disable_headshot `bool`: `true` disable head targeting, `false` target the head.
