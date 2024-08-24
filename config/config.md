@@ -77,7 +77,7 @@ Capture method using the [OBS](https://github.com/obsproject/obs-studio) program
 - mouse_lock_target `bool`: If set to `true`, the target will be locked without holding the mouse button, press the button again to release the target. Set to `false` to require holding the button for targeting.
 - mouse_auto_aim `bool`: If set to `true`, the aimbot will aim without pressing the targeting button, `false` aim using mouse buttons.
 - Some games block software mouse input, for this there are built-in drivers:
-	- mouse_ghub `bool`: If set to `true`, the Logitech GHUB exploit will be used for mouse input. Requires installing a specific version of the [GHUB](https://disk.yandex.ru/d/LagJI9dR-kM9cQ) program and not updating it as the exploit only works on the old version. Suitable not only for Logitech mice. `false` do not use the function.
+	- mouse_ghub `bool`: If set to `true`, the Logitech GHUB exploit will be used for mouse input. [GHUB install guide](https://github.com/SunOner/sunone_aimbot_docs/blob/main/tips/ghub.md).
 	- mouse_rzr `bool`: Only for Razer mice. Requires installing [synapse 3](https://www.razer.com/synapse-3), after installation go to the modules tab and install `macro`.
 
 ### Shooting:
