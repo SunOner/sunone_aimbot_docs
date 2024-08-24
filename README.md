@@ -7,3 +7,5 @@
 ### [Questions](https://github.com/SunOner/sunone_aimbot_docs/blob/main/questions/questions.md)
 
 ### [AI Models docs](https://github.com/SunOner/sunone_aimbot_docs/blob/main/ai_models/ai_models.md)
+
+### [Logitech GHUB Exploit](https://github.com/SunOner/sunone_aimbot_docs/blob/main/tips/ghub.md)
