@@ -128,4 +128,5 @@ Capture method using the [OBS](https://github.com/obsproject/obs-studio) program
 - spawn_window_pos_x `int`: X coordinate of the debug window's appearance when the aimbot starts.
 - spawn_window_pos_y `int`: Y coordinate of the debug window's appearance when the aimbot starts.
 - debug_window_scale_percent `int`: Size of the debug window in percent.
+- debug_window_screenshot_key `str`: Take a screenshot of the [button](https://github.com/SunOner/sunone_aimbot/blob/main/logic/buttons.py) from the debug screen. The screenshot will be saved to the screenshots directory. It is useful for training and retraining models.
 - The name of the debug window is randomly selected from the window_names.txt file.
