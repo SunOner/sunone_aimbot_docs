@@ -9,7 +9,7 @@ Each option can only accept a specific data type:
 This is the window where item search is conducted. It is small in size and located in the center of the screen. The small window size is needed to increase computational performance and avoid searching for objects in full-screen mode. The standard window options at 384x216 are 20% of the screen resolution of 1920x1080. The larger the window size, the more computational operations will be performed.
 - detection_window_width `int`: The width of the object search window in pixels.
 - detection_window_height `int`: The height of the object search window in pixels.
-
+- circle_capture `bool`: Applies a black circle mask to mask the corners. It helps to hide a character in third-person games.
 ![Object Search Window](https://github.com/SunOner/sunone_aimbot_docs/blob/main/config/media/object_search_window.png)
 
 ### Bettercam Capture Method:
