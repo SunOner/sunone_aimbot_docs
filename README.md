@@ -1,8 +1,8 @@
 # Docs for [Sunone_Aimbot](https://github.com/SunOner/sunone_aimbot)
 
-### [Config options docs](https://github.com/SunOner/sunone_aimbot_docs/blob/main/config/config.md)
+### Config options docs [Python](https://github.com/SunOner/sunone_aimbot_docs/blob/main/config/config.md) [Cpp](https://github.com/SunOner/sunone_aimbot_docs/blob/main/config/config_cpp.md)
 
-### [Install guide](https://github.com/SunOner/sunone_aimbot_docs/blob/main/install/helper.md)
+### Install guide [Python](https://github.com/SunOner/sunone_aimbot_docs/blob/main/install/helper.md)
 
 ### [Questions](https://github.com/SunOner/sunone_aimbot_docs/blob/main/questions/questions.md)
 
