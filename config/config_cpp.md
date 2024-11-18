@@ -59,6 +59,9 @@ You can view all the keys that can be used [here](https://github.com/SunOner/sun
 - button_reload_config `str`: Reload the config.
 - button_open_overlay `str`: Open the overlay. It doesn't work with applications running in full-screen mode.
 
+### Overlay
+- overlay_opacity `int`: The transparency value of the overlay. Values from `1` to `255` are accepted.
+
 ### Debug window
 - show_window `bool`: Display the debug window.
 - show_fps `bool`: Display the number of frames per second of screen recording.
