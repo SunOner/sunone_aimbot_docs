@@ -1,4 +1,4 @@
-# Docs for [Sunone_Aimbot](https://github.com/SunOner/sunone_aimbot)
+## Docs for [Sunone_Aimbot](https://github.com/SunOner/sunone_aimbot) and [Sunone_aimbot_cpp](https://github.com/SunOner/sunone_aimbot_cpp)
 
 ### Config options docs [Python](https://github.com/SunOner/sunone_aimbot_docs/blob/main/config/config.md) / [Cpp](https://github.com/SunOner/sunone_aimbot_docs/blob/main/config/config_cpp.md)
 
