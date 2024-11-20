@@ -62,6 +62,26 @@ You can view all the keys that can be used [here](https://github.com/SunOner/sun
 ### Overlay
 - overlay_opacity `int`: The transparency value of the overlay. Values from `1` to `255` are accepted.
 
+### Custom Classes
+Below are the class redistribution settings. These settings are useful for those who are not working with the original model. For example, if you load your own model and it has only 2 classes: `player` and `head`. To enable the program to process these values and distinguish between the head and the player, do the following:
+
+```python
+class_player = 0
+class_bot = 99
+class_weapon = 99
+class_outline = 99
+class_dead_body = 99
+class_hideout_target_human = 99
+class_hideout_target_balls = 99
+class_head = 1
+class_smoke = 99
+class_fire = 99
+class_third_person = 99
+```
+
+As you can see, I have reassigned the indices for the player and head classes. For the other classes, I have set the values to 99 because such an index definitely does not exist in the model, and it functions as None/NULL.
+
+
 ### Debug window
 - show_window `bool`: Display the debug window.
 - show_fps `bool`: Display the number of frames per second of screen recording.
