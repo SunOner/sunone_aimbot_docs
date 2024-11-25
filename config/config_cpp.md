@@ -30,7 +30,7 @@ These are the settings for the main window where object detection occurs. The wi
 - minSpeedMultiplier `float`: Minimum mouse movement speed multiplier. Allows the mouse to gain minimum speed.
 - maxSpeedMultiplier `float`: Maximum mouse movement speed multiplier. Prevents the mouse from gaining too much speed.
 - predictionInterval `float`: The higher the value, the faster the target prediction function will be processed.
-- input_method `str`: Mouse input method. `WIN32` / `[GHUB](https://github.com/SunOner/sunone_aimbot_docs/blob/main/tips/ghub.md)` / `[ARDUINO](https://github.com/SunOner/HID_Arduino)`
+- input_method `str`: Mouse input method. WIN32 / [GHUB](https://github.com/SunOner/sunone_aimbot_docs/blob/main/tips/ghub.md) / [ARDUINO](https://github.com/SunOner/HID_Arduino)
 
 ### Arduino
 - arduino_baudrate `int`: Baudrate of Arduino, the higher the value, the faster the commands will be processed.
