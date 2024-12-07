@@ -4,7 +4,7 @@
 
 ### Install guide [Python](https://github.com/SunOner/sunone_aimbot_docs/blob/main/install/helper.md)
 
-### [Questions](https://github.com/SunOner/sunone_aimbot_docs/blob/main/questions/questions.md)
+### Questions [Python](https://github.com/SunOner/sunone_aimbot_docs/blob/main/questions/questions_python.md)
 
 ### [AI Models docs](https://github.com/SunOner/sunone_aimbot_docs/blob/main/ai_models/ai_models.md)
 
