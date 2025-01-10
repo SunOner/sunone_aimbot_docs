@@ -1,19 +1,21 @@
 ## Logical Data Types
 Each option can only accept a specific data type:
-- bool: `true` meaning YES or `false` meaning NO.
-- int: Only whole numbers like `1`, `2`, etc.
-- float: Only numbers with a decimal point like `1.2`, `1.22`, `1.2345`, etc.
-- str: String `text`.
+- `bool`: `true` meaning YES or `false` meaning NO.
+- `int`: Only whole numbers like `1`, `2`, etc.
+- `float`: Only numbers with a decimal point like `1.2`, `1.22`, `1.2345`, etc.
+- `double`: `0.20`, `0.99` or `0.01`.
+- `str`: String `text`.
 
 ### Capture
-These are the settings for the main window where object detection occurs. The window is small and located in the center of the screen. The small window size is necessary to reduce system load and prevent objects from being detected across the entire screen. If the `duplication_api` option is disabled, the capture method from the standard Windows libraries `WinRT` is used. When using this library, mouse and border display functions become available during recording. Some users may find that disabling mouse or border recording options causes the application to close, so use the `duplication_api` method for these cases.
+These are the settings for the main window where object detection occurs. The window is small and located in the center of the screen. The small window size is necessary to reduce system load and prevent objects from being detected across the entire screen.
+- capture_method `str`: The screen capture method. Choose between `duplication_api`, `winrt`, or `virtual_camera` options.
 - detection_resolution: `int`: Resolution of the window in pixels. For example, a value of `400` will set the window resolution to 400 horizontally and 400 vertically.
 - capture_fps `float`: Frames per second limiter for window recording. The higher this value, the faster the detection rate, but keep in mind that CPU load might also increase. To disable FPS limiting, set the value to `0.0`.
 - monitor_idx `int`: The ID of the monitor on which the screen capture will be performed. `0` is the main monitor.
 - circle_mask `bool`: Enable circle mask overlay. Useful for third-person shooters to hide the character.
-- capture_borders `bool`: Enable the display of recording boundary frames.
-- capture_cursor `bool`: Display the mouse cursor during recording.
-- duplication_api `bool`: Use the `windows duplication api` for recording.
+- capture_borders `bool`: Enable the display of recording boundary frames. (Requires Windows 10 version 1809 or higher)
+- capture_cursor `bool`: Display the mouse cursor during recording. (Requires Windows 10 version 1809 or higher)
+- virtual_camera_name `str`: The name of the virtual camera. It is applied automatically.
 
 ### Target
 - disable_headshot `bool`: Disable targeting heads.
@@ -24,6 +26,7 @@ These are the settings for the main window where object detection occurs. The wi
   
 - ignore_third_person `bool`: `true` - the AI model will ignore the third-person player, `false` - the third-person player will not be ignored, and the aimbot will target them.
 - shooting_range_targets `bool`: Turn on target guidance at the shooting range.
+- auto_aim `bool`: The aimbot will automatically target the enemy without pressing any buttons.
 
 ### Mouse move
 - dpi `int`: DPI of the software mouse. The higher the DPI, the faster it will move.
@@ -47,13 +50,22 @@ These are the settings for the main window where object detection occurs. The wi
 
 ### AI
 - ai_model `str`: The name of the AI model that will be used for object detection. Models are located in the `./models` folder. For example, `AI_model_name = sunxds_0.5.6.pt`.
-- engine_image_size `int`: Image size of the AI model. Each model has its own image size used during training. Using a different image size may result in incorrect targeting and performance. Authors always specify the image size of the AI model when they publish it somewhere.
 - confidence_threshold `float`: How confident the AI should be to target an object. For example, a value of `0.20`, if the AI sees a player with confidence greater than or equal to 20%, it will target them. The higher the value, the fewer players may be found, and vice versa.
 - nms_threshold `float`: This function analyzes detections from a single frame, and if the boxes are roughly on the same object, it merges them into one box.
 - max_detections `int`: The maximum number of objects that can be detected per frame.
+- postprocess `str`: Which model parsing method to use. Choose between `yolo8`, `yolo9`, `yolo10` or `yolo11`.
+
+### Optical Flow
+At the moment (version 2.8) this option is under development. In the future, it can be used to dampen the recoil of weapons or improve motion prediction. It doesn't affect anything right now.
+- enable_optical_flow `bool`: Turn on or off the optical flow.
+- draw_optical_flow `bool`: Draw the optical flow in the debugging window.
+- draw_optical_flow_steps `int`: The size of the rendering grid.
+- optical_flow_alpha_cpu `float`: The size of the alpha channel during flow conversion.
+- optical_flow_magnitudeThreshold `double`: Optical flow correction.
+- staticFrameThreshold `float`: If the frames do not differ from each other, then the value will be the lowest. Set the value to a higher value so that you do not process identical frames.
 
 ### Buttons
-You can view all the keys that can be used [here](https://github.com/SunOner/sunone_aimbot_cpp/blob/main/sunone_aimbot_cpp/scr/keycodes.cpp). Enter the value `None` to deactivate the function. All key presses are registered even when the program is minimized. It supports multiple keys, for example, `button_targeting = RightMouseButton, MiddleMouseButton`.
+You can view all the keys that can be used [here](https://github.com/SunOner/sunone_aimbot_cpp/blob/main/sunone_aimbot_cpp/keyboard/keycodes.cpp). Enter the value `None` to deactivate the function. All key presses are registered even when the program is minimized. It supports multiple keys, for example, `button_targeting = RightMouseButton, MiddleMouseButton`.
 - button_targeting `str`: Targeting.
 - button_exit `str`: Exit the program.
 - button_pause `str`: Pause the program.
@@ -62,6 +74,7 @@ You can view all the keys that can be used [here](https://github.com/SunOner/sun
 
 ### Overlay
 - overlay_opacity `int`: The transparency value of the overlay. Values from `1` to `255` are accepted.
+- overlay_snow_theme `bool`: Switching on and off the winter theme.
 
 ### Custom Classes
 Below are the class redistribution settings. These settings are useful for those who are not working with the original model. For example, if you load your own model and it has only 2 classes: `player` and `head`. To enable the program to process these values and distinguish between the head and the player, do the following:
@@ -87,7 +100,7 @@ As you can see, I have reassigned the indices for the player and head classes. F
 - show_fps `bool`: Display the number of frames per second of screen recording.
 - window_name `str`: Name of the debug window.
 - window_size `int`: Size of the debug window in percent.
-- debug_window_screenshot_key `str`: Take a screenshot of the [button](https://github.com/SunOner/sunone_aimbot_cpp/blob/main/sunone_aimbot_cpp/scr/keycodes.cpp) from the debug screen. The screenshot will be saved to the screenshots directory. It is useful for training and retraining models.
+- debug_window_screenshot_key `str`: Take a screenshot of the [button](https://github.com/SunOner/sunone_aimbot_cpp/blob/main/sunone_aimbot_cpp/keyboard/keycodes.cpp) from the debug screen. The screenshot will be saved to the screenshots directory. It is useful for training and retraining models.
 - screenshot_delay `int`: If the screenshot button is held down, it takes screenshots every N milliseconds. Useful if the button is set as the shooting button `debug_window_screenshot_key = RightMouseButton`.
 - always_on_top `bool`: When enabled, the debug window will be displayed on top of other windows.
 - verbose`bool`: Enable detailed output in the console.
