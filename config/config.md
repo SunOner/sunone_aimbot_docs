@@ -12,10 +12,12 @@ This is the window where item search is conducted. It is small in size and locat
 - circle_capture `bool`: Applies a black circle mask to mask the corners. It helps to hide a character in third-person games.
 ![Object Search Window](https://github.com/SunOner/sunone_aimbot_docs/blob/main/config/media/object_search_window.png)
 
+### Global capture options
+- capture_fps: `int`: Global variable for capturing frames per second for all methods.
+
 ### Bettercam Capture Method:
 [This is a third-party library](https://github.com/RootKit-Org/BetterCam) for capturing images from the screen. It operates on the same API as Geforce Experience for video recording. It has a default value of 60 frames per second. If the game has very dynamic gameplay, it is recommended to increase the frames per second to 100.
 - Bettercam_capture `bool`: `true` - use this method for image capture, `false` do not use this method.
-- bettercam_capture_fps `int`: `60` frames per second.
 - bettercam_monitor_id `int`: If you want to use screen recording from the main monitor, set the value to `0`; another monitor has a value higher than `1`, `2`, etc.
 - bettercam_gpu_id `int`: Which graphics card will be used for image capture, `0` is the default GPU ID, i.e., installed in the first PCI slot, `1`, `2`, etc.
 
@@ -45,7 +47,10 @@ Capture method using the [OBS](https://github.com/obsproject/obs-studio) program
 
 - Obs_capture `bool`: `true` - use this method for image capture, `false` do not use this method.
 - Obs_camera_id `str` or `int`: Enter the value `auto` for the program to automatically find the OBS virtual camera, or manually enter the virtual camera ID `0`, `1`, etc.
-- Obs_capture_fps `int`: Specific fps value for screen capture.
+
+### MSS Capture method:
+MSS is an ultra-fast cross-platform multiple screenshots module in pure python using ctypes.
+- mss_capture `bool`: Use mss capture method.
 
 ### Aim:
 - body_y_offset `float`: Offset the coordinates on the Y-axis (up from the target) by `0.35` if the head was not found or the head targeting function was disabled. `0.00` is the center of the target, you can also use `-0.10`, etc.
