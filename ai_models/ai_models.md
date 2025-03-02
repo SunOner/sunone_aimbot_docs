@@ -14,6 +14,7 @@
 - Select model.
 - Select image size.
 - Export.
+
 ## Export from CMD:
 - All commands are executed in the console window:
 - First, go to the aimbot directory using the command:
@@ -31,4 +32,11 @@ yolo export model="models/sunxds_0.5.6.pt" format=engine device=0 imgsz=640 half
 - `workspace=8`: (optional) GPU max video memory.
 - `verbose=False`: (optional) Debug stuff. Convenient function, can show errors when exporting.
 
-## After exporting, the new models will appear in the `./models` folder.
+- After exporting, the new models will appear in the `./models` folder.
+
+## Export model to run model in sunone_aimbot_cpp:
+- Export model to onnx format with dynamic shape:
+	```bash
+	yolo export model=best.pt format=onnx dynamic=true simplify=true
+	```
+- Select .onnx model in AI tab for auto export to engine.
