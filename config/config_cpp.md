@@ -36,6 +36,8 @@ These are the settings for the main window where object detection occurs. The wi
 - minSpeedMultiplier `float`: Minimum mouse movement speed multiplier. Allows the mouse to gain minimum speed.
 - maxSpeedMultiplier `float`: Maximum mouse movement speed multiplier. Prevents the mouse from gaining too much speed.
 - predictionInterval `float`: The higher the value, the faster the target prediction function will be processed.
+- easynorecoil `bool`: Enable easy no-recoil.
+- easynorecoilstrength `float`: How much does the crosshair pull down when the easynorecoil option is enabled?
 - input_method `str`: Mouse input method. WIN32 / [GHUB](https://github.com/SunOner/sunone_aimbot_docs/blob/main/tips/ghub.md) / [ARDUINO](https://github.com/SunOner/HID_Arduino)
 
 ### Arduino
@@ -53,7 +55,13 @@ These are the settings for the main window where object detection occurs. The wi
 - confidence_threshold `float`: How confident the AI should be to target an object. For example, a value of `0.20`, if the AI sees a player with confidence greater than or equal to 20%, it will target them. The higher the value, the fewer players may be found, and vice versa.
 - nms_threshold `float`: This function analyzes detections from a single frame, and if the boxes are roughly on the same object, it merges them into one box.
 - max_detections `int`: The maximum number of objects that can be detected per frame.
-- postprocess `str`: Which model parsing method to use. Choose between `yolo8`, `yolo9`, `yolo10` or `yolo11`.
+- postprocess `str`: Which model parsing method to use. Choose between `yolo8`, `yolo9`, `yolo10`, `yolo11` or `yolo12`.
+- export_enable_fp8 `bool`: Export the model with FP8 quantization. The model will run faster, but accuracy will drop by about 4% (not supported by all GPUs). Disabled by default.
+- export_enable_fp16 `bool`: Export the model with FP16 quantization. The model will run faster.
+
+### CUDA
+- use_cuda_graph `bool`: The function is under development. Currently, it doesn't respond to anything.
+- use_pinned_memory `bool`: Enable data transfer acceleration between CPU and GPU. (Not supported on all GPUs)
 
 ### Optical Flow
 At the moment (version 2.8) this option is under development. In the future, it can be used to dampen the recoil of weapons or improve motion prediction. It doesn't affect anything right now.
@@ -66,7 +74,10 @@ At the moment (version 2.8) this option is under development. In the future, it 
 
 ### Buttons
 You can view all the keys that can be used [here](https://github.com/SunOner/sunone_aimbot_cpp/blob/main/sunone_aimbot_cpp/keyboard/keycodes.cpp). Enter the value `None` to deactivate the function. All key presses are registered even when the program is minimized. It supports multiple keys, for example, `button_targeting = RightMouseButton, MiddleMouseButton`.
+
 - button_targeting `str`: Targeting.
+- button_shoot `str`: Shoot button for easy anti recoil option.
+- button_zoom `str`: Zoom button for easy anti recoil option.
 - button_exit `str`: Exit the program.
 - button_pause `str`: Pause the program.
 - button_reload_config `str`: Reload the config.
@@ -75,6 +86,7 @@ You can view all the keys that can be used [here](https://github.com/SunOner/sun
 ### Overlay
 - overlay_opacity `int`: The transparency value of the overlay. Values from `1` to `255` are accepted.
 - overlay_snow_theme `bool`: Switching on and off the winter theme.
+- overlay_ui_scale `float`: Change global UI scale of overlay.
 
 ### Custom Classes
 Below are the class redistribution settings. These settings are useful for those who are not working with the original model. For example, if you load your own model and it has only 2 classes: `player` and `head`. To enable the program to process these values and distinguish between the head and the player, do the following:
