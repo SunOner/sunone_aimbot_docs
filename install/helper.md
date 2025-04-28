@@ -1,6 +1,6 @@
 # Helper - Installation Assistant for All Components
-1. Python 3.11.6 is required for automatic installation. [Download Python](https://www.python.org/ftp/python/3.11.6/python-3.11.6-amd64.exe).
-   - Make sure to check the `Add Python 3.11.6 to PATH` box before installation.
+1. Python 3.12.0 is required for automatic installation. [Download Python](https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe).
+   - Make sure to check the `Add Python 3.12.0 to PATH` box before installation.
 ![](https://github.com/SunOner/sunone_aimbot_docs/blob/main/install/media/python_add_to_path.png)
 2. Download the repository and extract it, for example, to your desktop. [Download](https://github.com/SunOner/sunone_aimbot/archive/refs/heads/main.zip).
 3. Navigate to the folder you extracted and run `run_helper.bat`.
