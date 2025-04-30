@@ -8,9 +8,13 @@ Each option can only accept a specific data type:
 
 ### Capture
 These are the settings for the main window where object detection occurs. The window is small and located in the center of the screen. The small window size is necessary to reduce system load and prevent objects from being detected across the entire screen.
-- capture_method `str`: The screen capture method. Choose between `duplication_api`, `winrt`, or `virtual_camera` options.
+- capture_method `str`: The screen capture method. Choose between:
+	- `duplication_api`
+	- `winrt`
+	- `virtual_camera`
 - detection_resolution: `int`: Resolution of the window in pixels. For example, a value of `400` will set the window resolution to 400 horizontally and 400 vertically.
 - capture_fps `float`: Frames per second limiter for window recording. The higher this value, the faster the detection rate, but keep in mind that CPU load might also increase. To disable FPS limiting, set the value to `0.0`.
+- capture_use_cuda `bool`: Enables CUDA acceleration for screen capturing (if supported by your GPU). This can significantly improve performance and reduce CPU usage. Requires an NVIDIA GPU and proper CUDA setup.
 - monitor_idx `int`: The ID of the monitor on which the screen capture will be performed. `0` is the main monitor.
 - circle_mask `bool`: Enable circle mask overlay. Useful for third-person shooters to hide the character.
 - capture_borders `bool`: Enable the display of recording boundary frames. (Requires Windows 10 version 1809 or higher)
@@ -23,7 +27,8 @@ These are the settings for the main window where object detection occurs. The wi
   
   > [!NOTE]
   > Pay attention to the image. Initially, the player is detected by half, and if the value is set to 0.50, the aimbot will aim at the head. In the second image, the player is completely detected, and if the value is set to the same 0.50, then the shots will not be aimed at the head but at the chest.
-  
+ 
+- head_y_offset `float`: Y offset specifically for the head.
 - ignore_third_person `bool`: `true` - the AI model will ignore the third-person player, `false` - the third-person player will not be ignored, and the aimbot will target them.
 - shooting_range_targets `bool`: Turn on target guidance at the shooting range.
 - auto_aim `bool`: The aimbot will automatically target the enemy without pressing any buttons.
@@ -38,7 +43,17 @@ These are the settings for the main window where object detection occurs. The wi
 - predictionInterval `float`: The higher the value, the faster the target prediction function will be processed.
 - easynorecoil `bool`: Enable easy no-recoil.
 - easynorecoilstrength `float`: How much does the crosshair pull down when the easynorecoil option is enabled?
-- input_method `str`: Mouse input method. WIN32 / [GHUB](https://github.com/SunOner/sunone_aimbot_docs/blob/main/tips/ghub.md) / [ARDUINO](https://github.com/SunOner/HID_Arduino)
+- input_method `str`: Mouse input method.
+	- WIN32
+	- [GHUB](https://github.com/SunOner/sunone_aimbot_docs/blob/main/tips/ghub.md)
+	- [ARDUINO](https://github.com/SunOner/HID_Arduino)
+
+### Wind Mouse
+- wind_mouse_enabled `bool`: Enables WindMouse movement. Makes mouse paths look more natural and human-like.
+- wind_G `float`: Gravity force pulling the mouse toward the target. Higher values make the cursor lock onto the target more strongly.
+- wind_W `float`: Wind force that adds randomness to movement. Higher values make the path more wobbly or unpredictable.
+- wind_M `float`: Maximum step size or movement speed. Limits how fast the cursor can move in each step.
+- wind_D `float`: Distance threshold where the behavior of the wind and gravity changes. Below this distance, movement becomes more precise and controlled.
 
 ### Arduino
 - arduino_baudrate `int`: Baudrate of Arduino, the higher the value, the faster the commands will be processed.
@@ -46,11 +61,17 @@ These are the settings for the main window where object detection occurs. The wi
 - arduino_16_bit_mouse `bool`: `true` sends 16-bit values to the port for mouse movement (coordinate range increases to `-32768` - `32768`), works if the mouse supports them. `false` sends 8-bit values for mouse movement (range `-127` - `127`).
 - arduino_enable_keys `bool`: When the targeting button is pressed, data from Arduino is forwarded to the aimbot (button pressed/released) and triggers the auto-targeting function. It is useful for applications that do not allow the application to recognize whether a button has been pressed.
 
+### Kmbox
+- The functionality is not fully implemented yet. Currently, the port is not listening for commands (from the PC with the game).
+
 ### Mouse shooting
 - auto_shoot `bool`: Enable automatic shooting. (For some games, [arduino](https://github.com/SunOner/HID_Arduino), GHUB exploit, or Razer is required).
 - bScope_multiplier `float`: Allows increasing or decreasing the player's zone (box) for automatic shooting. `1.00` - Standard value, `2.20` - enlarged zone, `0.50` - reduced zone.
 
 ### AI
+- backend `str`: The AI inference engine to use. Choose based on your system and GPU support:
+	- TRT: Uses NVIDIA TensorRT (fastest, CUDA required).
+	- DML: Uses DirectML (works on most GPUs, including AMD/Intel, no CUDA needed).
 - ai_model `str`: The name of the AI model that will be used for object detection. Models are located in the `./models` folder. For example, `AI_model_name = sunxds_0.5.6.pt`.
 - confidence_threshold `float`: How confident the AI should be to target an object. For example, a value of `0.20`, if the AI sees a player with confidence greater than or equal to 20%, it will target them. The higher the value, the fewer players may be found, and vice versa.
 - nms_threshold `float`: This function analyzes detections from a single frame, and if the boxes are roughly on the same object, it merges them into one box.
