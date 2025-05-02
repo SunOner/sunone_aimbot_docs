@@ -45,7 +45,7 @@ These are the settings for the main window where object detection occurs. The wi
 - nearRadius `float`: Radius (pixels) of the smooth slow-down zone. Inside this ring the S-curve easing is active, allowing precise control.
 - speedCurveExponent `float`: Exponent α that shapes the S-curve deceleration (`curve = 1 − (1 − t)^α`). Higher α ⇒ gentler braking, lower α ⇒ more aggressive.
 - snapBoostFactor = `float`: Factor multiplied by `minSpeedMultiplier` while inside `snapRadius`. Guarantees at least ~1 px movement each frame so the cursor "snaps" cleanly onto the exact center.
-![Mouse_speed_mult_corr](https://github.com/SunOner/sunone_aimbot_docs/blob/main/config/media/mouse_speed_mult_corr.png)
+- ![Mouse_speed_mult_corr](https://github.com/SunOner/sunone_aimbot_docs/blob/main/config/media/mouse_speed_mult_corr.png)
 - easynorecoil `bool`: Enable easy no-recoil.
 - easynorecoilstrength `float`: How much does the crosshair pull down when the easynorecoil option is enabled?
 - input_method `str`: Mouse input method.
