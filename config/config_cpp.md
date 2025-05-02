@@ -41,6 +41,11 @@ These are the settings for the main window where object detection occurs. The wi
 - minSpeedMultiplier `float`: Minimum mouse movement speed multiplier. Allows the mouse to gain minimum speed.
 - maxSpeedMultiplier `float`: Maximum mouse movement speed multiplier. Prevents the mouse from gaining too much speed.
 - predictionInterval `float`: The higher the value, the faster the target prediction function will be processed.
+- snapRadius `float`: Inner radius around the target center (pixels) where an extra boost is applied to overcome integer-pixel rounding. Prevents the cursor from stalling on the last pixel or two
+- nearRadius `float`: Radius (pixels) of the smooth slow-down zone. Inside this ring the S-curve easing is active, allowing precise control.
+- speedCurveExponent `float`: Exponent α that shapes the S-curve deceleration (`curve = 1 − (1 − t)^α`). Higher α ⇒ gentler braking, lower α ⇒ more aggressive.
+- snapBoostFactor = `float`: Factor multiplied by `minSpeedMultiplier` while inside `snapRadius`. Guarantees at least ~1 px movement each frame so the cursor "snaps" cleanly onto the exact center.
+![Mouse_speed_mult_corr](https://github.com/SunOner/sunone_aimbot_docs/blob/main/config/media/mouse_speed_mult_corr.png)
 - easynorecoil `bool`: Enable easy no-recoil.
 - easynorecoilstrength `float`: How much does the crosshair pull down when the easynorecoil option is enabled?
 - input_method `str`: Mouse input method.
