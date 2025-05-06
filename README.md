@@ -8,4 +8,6 @@
 
 ### [AI Models docs](https://github.com/SunOner/sunone_aimbot_docs/blob/main/ai_models/ai_models.md)
 
+### [KMBOX B+ PRO](https://github.com/SunOner/sunone_aimbot_docs/blob/main/tips/kmbox_b.md)
+
 ### [Logitech GHUB Exploit](https://github.com/SunOner/sunone_aimbot_docs/blob/main/tips/ghub.md)
