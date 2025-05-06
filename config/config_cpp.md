@@ -52,6 +52,7 @@ These are the settings for the main window where object detection occurs. The wi
 	- WIN32
 	- [GHUB](https://github.com/SunOner/sunone_aimbot_docs/blob/main/tips/ghub.md)
 	- [ARDUINO](https://github.com/SunOner/HID_Arduino)
+	- [KMBOX_B](https://github.com/SunOner/sunone_aimbot_docs/blob/main/tips/kmbox_b.md)
 
 ### Wind Mouse
 - wind_mouse_enabled `bool`: Enables WindMouse movement. Makes mouse paths look more natural and human-like.
@@ -66,8 +67,9 @@ These are the settings for the main window where object detection occurs. The wi
 - arduino_16_bit_mouse `bool`: `true` sends 16-bit values to the port for mouse movement (coordinate range increases to `-32768` - `32768`), works if the mouse supports them. `false` sends 8-bit values for mouse movement (range `-127` - `127`).
 - arduino_enable_keys `bool`: When the targeting button is pressed, data from Arduino is forwarded to the aimbot (button pressed/released) and triggers the auto-targeting function. It is useful for applications that do not allow the application to recognize whether a button has been pressed.
 
-### Kmbox
-- The functionality is not fully implemented yet. Currently, the port is not listening for commands (from the PC with the game).
+### Kmbox B
+- kmbox_b_baudrate `int`: Baudrate of KMBOX B.
+- kmbox_b_port `str`: COM port of KMBOX. Use values `COM1`, `COM2` to manually determine the KMBOX B port.
 
 ### Mouse shooting
 - auto_shoot `bool`: Enable automatic shooting. (For some games, [arduino](https://github.com/SunOner/HID_Arduino), GHUB exploit, or Razer is required).
