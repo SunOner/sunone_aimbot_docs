@@ -21,11 +21,17 @@
 ## Flashing Instructions
 
 1. Launch `uPyCraft_V1.1.exe`.
-2. Connect to the KMBOX device via the correct COM port.
-3. Expand the `device` tab and double-click `boot.py`.
-4. Replace all the content of `boot.py` with the downloaded script.
-5. Go to `Tools -> Download` to upload the script to the device.
-6. Disconnect from the device (use the disconnect button on the right or just close the program).
+2. Connect to the KMBOX on the correct **COM** port.
+3. Expand the **device** tab and double click `boot.py`.
+4. Replace the entire contents of **`boot.py`** with the downloaded script.
+5. Open `Tools → Download` to write the new script to the device’s flash.
+6. In the uPyCraft console, execute `km.reboot()` to reboot KMBOX.
+
+   * When the board re-enumerates, press **`Download and Run`** to launch the script.
+   * You can now close uPyCraft or safely disconnect.
+
+> **Tip:** If KMBOX was later unplugged, you can still start `boot.py` via sunone_aimbot_cpp — open its overlay, go to the KMBOX settings (mouse->Kmbox b), and press **Run boot.py** there.
+
 
 ## Final Setup
 
